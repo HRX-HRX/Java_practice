@@ -1,12 +1,5 @@
 import java.util.HashMap;
 
-/**
- * Created with IntelliJ IDEA.
- * Description:
- * User: GaoBo
- * Date: 2021-02-05
- * Time: 11:51
- */
 public class HashBuck {
     static class Node {
         public int key;
