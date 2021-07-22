@@ -1,0 +1,2 @@
+2021-06-27 10:09:53.275 DEBUG 19488 --- [restartedMain] o.s.boot.devtools.restart.Restarter      : Starting application com.example.demo.DemoApplication with URLs [file:/E:/Java%20bite/SpringBootDemo/target/classes/]
+2021-06-27 10:09:53.279  INFO 19488 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC

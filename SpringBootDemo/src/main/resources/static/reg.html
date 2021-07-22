@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>注册页面</title>
+        <link rel="stylesheet" href="css/conmmon.css">
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+
+    <body>
+        <form id="form1" action="/api/user/reg" method="post" enctype="multipart/form-data">
+
+            <!-- 导航栏 -->
+            <div class="nav">
+                <img src="img/logo2.jpg" alt="">
+                <span class="title">我的博客系统</span>
+                <!-- 用来占据中间位置 -->
+                <span class="spacer"></span>
+                <a href="blog_list.html">主页</a>
+                <a href="blog_edit.html">写博客</a>
+                <a href="reg.html">注册</a>
+                <!-- <a href="#">注销</a> -->
+            </div>
+            <!-- 版心 -->
+            <div class="login-container">
+                <!-- 中间的登陆框 -->
+                <div class="login-dialog">
+                    <h3>注册</h3>
+                    <div class="row">
+                        <span>用户名</span>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="row">
+                        <span>密码</span>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="row">
+                        <span>确认密码</span>
+                        <input type="password" id="password0" name="pasword0">
+                    </div>
+                    <div class="row">
+                        <span>头像</span>
+                        <input type="file" id="file" name="file">
+                    </div>
+                    <div class="row">
+                        <button id="submit" onclick="mysub()">提交</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </body>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        function mysub() {
+            var name = jQuery("#username");
+            var password = jQuery("#password");
+            var password0 = jQuery("#password0");
+            // 非空效验
+            if (name.val().trim() === "") {
+                alert("请先输入用户名！")
+                name.focus();
+                return false;
+            }
+            if (password.val().trim() === "") {
+                alert("请先输入密码！")
+                password.focus();
+                return false;
+            }
+            if (password0.val().trim() === "") {
+                alert("请先输入确认密码！")
+                password0.focus();
+                return false;
+            }
+
+            if (password.val().trim() !== password0.val().trim()) {
+                alert("两次输入密码不一致！")
+                password0.focus();
+                return false;
+            }
+            //jQuery内置方法 提交表单
+            jQuery("#form1").submit();
+        }
+    </script>
+</html>
